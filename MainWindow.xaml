@@ -1,0 +1,29 @@
+﻿<Window x:Class="catMusic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:catMusic"
+        mc:Ignorable="d"
+        Title="Cat's Music Counter" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <MediaElement Name="Music" LoadedBehavior="Manual" Visibility="Hidden"/>
+        <Label Name="Counter" Grid.Row="0" Content="Loop Count: 0" FontSize="40" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="FilePickerButton" Grid.Row="1" Content="Choose File"/>
+        <Label Name="FileName" Grid.Row="2" Content="~" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="StartButton" Grid.Column="0" Content="Start" IsEnabled="False"/>
+            <Button x:Name="StopButton" Grid.Column="1" Content="Stop" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</Window>
