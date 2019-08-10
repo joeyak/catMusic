@@ -49,13 +49,17 @@ namespace catMusic
                 StartButton.IsEnabled = true;
                 StopButton.IsEnabled = false;
             };
+
+            Prefix.TextChanged += (o, e) => UpdateCounter();
         }
 
         void IncrementLoop()
         {
             _count++;
-            Counter.Content = $"Loop Count: {_count}";
-            File.WriteAllText("count.txt", _count.ToString());
+            UpdateCounter();
+            File.WriteAllText("count.txt", Counter.Content.ToString());
         }
+
+        void UpdateCounter() => Counter.Content = $"{Prefix.Text}: {_count}";
     }
 }

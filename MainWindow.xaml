@@ -12,12 +12,21 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <MediaElement Name="Music" LoadedBehavior="Manual" Visibility="Hidden"/>
-        <Label Name="Counter" Grid.Row="0" Content="Loop Count: 0" FontSize="40" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <Button x:Name="FilePickerButton" Grid.Row="1" Content="Choose File"/>
-        <Label Name="FileName" Grid.Row="2" Content="~" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Prefix: " FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Grid.Column="1" x:Name="Prefix" FontSize="20" BorderBrush="SeaGreen" BorderThickness="3" Opacity="0.3" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Label Name="Counter" Grid.Row="1" FontSize="40" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="FilePickerButton" Grid.Row="2" Content="Choose File"/>
+        <Label Name="FileName" Grid.Row="3" Content="~" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
